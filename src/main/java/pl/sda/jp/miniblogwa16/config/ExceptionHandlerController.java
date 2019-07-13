@@ -13,17 +13,17 @@ import javax.swing.text.html.parser.Entity;
 public class ExceptionHandlerController {
 
 
-    @ExceptionHandler(EntityNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    //@org.springframework.web.bind.annotation.ExceptionHandler(EntityNotFoundException.class)
+//    @ExceptionHandler(EntityNotFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    //@org.springframework.web.bind.annotation.ExceptionHandler(EntityNotFoundException.class)
+//
+//    public ExceptionMessage handleNotFoundException(EntityNotFoundException ex){
+//
+//
+//
+//        return new ExceptionMessage((ex.getMessage(), HttpStatus.NOT_FOUND.value()));
 
-    public ExceptionMessage handleNotFoundException(EntityNotFoundException ex){
 
 
-
-        return new ExceptionMessage((ex.getMessage(), HttpStatus.NOT_FOUND.value()));
-
-
-
-    }
+   // }
 }

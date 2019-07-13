@@ -20,10 +20,10 @@ public class FulContextTest {
     @Autowired
     private UserRegistrationService userRegistrationService;
 
-    @Test
-    public void shouldCreaterUser() throws EmailAlreadyExistsException {
-        RegisterForm registerForm = new RegisterForm();
-        registerForm.setEmail("kowalski@gmail.com");
-    }
+//    @Test
+//    public void shouldCreaterUser() throws EmailAlreadyExistsException {
+//        RegisterForm registerForm = new RegisterForm();
+//        registerForm.setEmail("kowalski@gmail.com");
+//    }
 
 }
