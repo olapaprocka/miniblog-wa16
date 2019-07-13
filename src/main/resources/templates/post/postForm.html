@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj post</title>
+</head>
+<body>
+<form method="post" th:action="{@/post/add}" th:object="${postForm}">
+    <h1 th:text="${post.title}">Tytuł posta</h1>
+    <p th:text="${post.id}"></p>
+
+    <br>
+    Post: <input type="text" name="post">
+    <br>
+    DataAdd: <input type="datetime-local" name DataAdd>
+    <br>
+    <input type="submit" value="Dodaj post">
+
+</form>
+
+
+
+</body>
+</html>

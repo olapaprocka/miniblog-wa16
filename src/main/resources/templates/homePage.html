@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Super blog!</title>
+    <div th:replace="fragments/header :: header-libs"></div>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1>Super blog!</h1>
+<div sec:authorize="hasRole('USER')">
+    Has role USER
+</div>
+
+<div sec:authorize="hasRole('ADMIN')">
+    Has role ADMIN
+</div>
+
+
+Logged user: <span sec:authentication="name">Bob</span>
+Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+
+
+<!--<p th:if="${msg != null}" th:text="${msg}"></p>-->
+<p th:if="${@permissionService.isUserInAnyRole('ADMIN', 'USER')}">
+Witaj zalogowany użytkowniku!
+</p>
+
+<ol>
+    <li th:if="${@permissionService.isUser()}">
+        <a> Link dostępny dla usera</a>
+
+    </li>
+
+    <li th:if="${@permissionService.isAdmin()}">
+        <a th:href="@{/admin/users}"> Edycja użytkowników</a>
+    </li>
+
+</ol>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
